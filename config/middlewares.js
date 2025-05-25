@@ -18,7 +18,11 @@ module.exports = [
   {
     name: "strapi::cors",
     config: {
-      origin: ["http://localhost:3000", "http://localhost:3001", "https://localhost:3000"],
+      origin: [
+        "http://localhost:3000",
+        "http://localhost:3001",
+        "https://nextjs-frontend-delta-eight.vercel.app"
+      ],
       methods: ["GET", "POST", "PUT", "PATCH", "DELETE", "HEAD", "OPTIONS"],
       headers: [
         "Content-Type",
@@ -28,7 +32,7 @@ module.exports = [
         "Cache-Control",
         "Pragma",
         "Expires",
-        "X-Requested-With",
+        "X-Requested-With"
       ],
       keepHeaderOnError: true,
     },
@@ -38,15 +42,15 @@ module.exports = [
   {
     name: "strapi::body",
     config: {
-      formLimit: "256mb", // Increase form limit
-      jsonLimit: "256mb", // Increase JSON limit
-      textLimit: "256mb", // Increase text limit
+      formLimit: "256mb",
+      jsonLimit: "256mb",
+      textLimit: "256mb",
       formidable: {
-        maxFileSize: 200 * 1024 * 1024, // 200MB file size limit
+        maxFileSize: 200 * 1024 * 1024,
       },
     },
   },
   "strapi::session",
   "strapi::favicon",
   "strapi::public",
-]
+];
